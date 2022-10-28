@@ -9,26 +9,26 @@ export class TipoEjercicioController {
 
   @Post()
   create(@Body() createTipoEjercicioDto: CreateTipoEjercicioDto) {
-    return this.tipoEjercicioService.create(createTipoEjercicioDto);
+    return this.tipoEjercicioService.Crear(createTipoEjercicioDto);
   }
 
   @Get()
   findAll() {
-    return this.tipoEjercicioService.findAll();
+    return this.tipoEjercicioService.BuscarTodos();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.tipoEjercicioService.findOne(+id);
+    return this.tipoEjercicioService.BuscarUno(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateTipoEjercicioDto: UpdateTipoEjercicioDto) {
-    return this.tipoEjercicioService.update(+id, updateTipoEjercicioDto);
+    return this.tipoEjercicioService.Actualizar(id, updateTipoEjercicioDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.tipoEjercicioService.remove(+id);
+    return this.tipoEjercicioService.Eliminar(id);
   }
 }

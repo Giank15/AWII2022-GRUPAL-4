@@ -13,7 +13,7 @@ export class EjercicioRealizado {
     TiempoTranscurrido: string
 
     @Prop()
-    CaloriasQuemadas: number
+    CaloriasQuemadas: string
 }
 
 

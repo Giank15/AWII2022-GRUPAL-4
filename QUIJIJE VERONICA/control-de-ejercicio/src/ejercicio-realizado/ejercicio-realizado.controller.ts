@@ -9,26 +9,26 @@ export class EjercicioRealizadoController {
 
   @Post()
   create(@Body() createEjercicioRealizadoDto: CreateEjercicioRealizadoDto) {
-    return this.ejercicioRealizadoService.create(createEjercicioRealizadoDto);
+    return this.ejercicioRealizadoService.Crear(createEjercicioRealizadoDto);
   }
 
   @Get()
   findAll() {
-    return this.ejercicioRealizadoService.findAll();
+    return this.ejercicioRealizadoService.BuscarTodos();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.ejercicioRealizadoService.findOne(+id);
+    return this.ejercicioRealizadoService.BuscarUno(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateEjercicioRealizadoDto: UpdateEjercicioRealizadoDto) {
-    return this.ejercicioRealizadoService.update(+id, updateEjercicioRealizadoDto);
+    return this.ejercicioRealizadoService.Actualizar(id, updateEjercicioRealizadoDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.ejercicioRealizadoService.remove(+id);
+    return this.ejercicioRealizadoService.Eliminar(id);
   }
 }

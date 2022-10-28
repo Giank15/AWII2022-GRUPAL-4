@@ -9,26 +9,26 @@ export class DeportistaController {
 
   @Post()
   create(@Body() createDeportistaDto: CreateDeportistaDto) {
-    return this.deportistaService.create(createDeportistaDto);
+    return this.deportistaService.Crear(createDeportistaDto);
   }
 
   @Get()
   findAll() {
-    return this.deportistaService.findAll();
+    return this.deportistaService.BuscarTodos();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.deportistaService.findOne(+id);
+    return this.deportistaService.BuscarUno(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateDeportistaDto: UpdateDeportistaDto) {
-    return this.deportistaService.update(+id, updateDeportistaDto);
+    return this.deportistaService.Actualizar(id, updateDeportistaDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.deportistaService.remove(+id);
+    return this.deportistaService.Eliminar(id);
   }
 }
