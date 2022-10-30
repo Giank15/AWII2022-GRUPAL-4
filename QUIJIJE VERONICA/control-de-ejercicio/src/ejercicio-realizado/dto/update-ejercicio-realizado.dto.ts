@@ -1,4 +1,4 @@
-import { PartialType } from '@nestjs/mapped-types';
+import { PartialType } from '@nestjs/swagger';
 import { CreateEjercicioRealizadoDto } from './create-ejercicio-realizado.dto';
 
 export class UpdateEjercicioRealizadoDto extends PartialType(CreateEjercicioRealizadoDto) {}
