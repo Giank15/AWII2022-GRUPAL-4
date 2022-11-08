@@ -1,6 +1,7 @@
 //Importamos y definimos todos los métodos necesarios para la ejecución del codigo asi como de su funcionamiento 
 
 import { Controller, Get,Post,Put,Delete,Res,HttpStatus,Body,Param,Query,NotFoundException} from '@nestjs/common';
+import { validacionPlatos } from './dto/platos.validacion';
 import { CreatePlatoDTO } from './dto/platos.dto';
 import { PlatosService } from './platos.service';
 
