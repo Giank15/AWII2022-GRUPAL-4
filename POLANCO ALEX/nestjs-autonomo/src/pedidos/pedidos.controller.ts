@@ -1,5 +1,6 @@
 //Llamamos a los métodos que serán utilizados 
 import { Controller, Get, Post,Put,Delete, Res, HttpStatus, Body, Param, Query, NotFoundException} from '@nestjs/common';
+import { validacionPedido } from './dto/pedidos.validacion';
 import { CreatePedidoDTO } from './dto/pedidos.dto';
 import { PedidosService } from './pedidos.service';
 
