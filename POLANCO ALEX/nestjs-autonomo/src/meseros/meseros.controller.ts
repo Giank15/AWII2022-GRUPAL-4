@@ -1,4 +1,5 @@
 import { Controller, Get,Post,Put,Delete,Res,HttpStatus,Body,Param,Query,NotFoundException } from '@nestjs/common';
+import { validacionMesero } from './dto/meseros.validacion';
 import { CreateMeseroDTO } from './dto/meseros.dto';
 import { MeserosService } from './meseros.service';
 
