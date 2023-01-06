@@ -1,0 +1,58 @@
+<div class="container-fluid g-0">
+
+  <div class="display-area">
+
+      <main class="content">
+          <div class="container-fluid">
+              <div class="header">
+                  <h1 class="header-title">
+                      Edición de Recetas
+                  </h1>
+              </div>
+              <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="/home">Inicio</a></li>
+                      <li class="breadcrumb-item"><a routerLink="/receta">Recetas</a></li>
+                      <li class="breadcrumb-item active"><a>Editar Receta</a></li>
+                  </ol>
+              </nav>
+          </div>
+          <div class="row">
+              <div class="col-12 col-xl-12">
+
+                  <div class="card">
+                      <div class="card-header bg-dark" style="color: #fff;">
+                          <h5 class="card-title">Rellene el formulario</h5>
+                          <h6 class="card-subtitle text muted">Receta.</h6>
+                      </div>
+                      <div class="card-body">
+                          <form #recetaForm="ngForm" (ngSubmit)="updateReceta(recetaForm)"   class="formulario" id="formulario">
+                              <div class="row">
+                                  <div class="col-lg-4">
+                                      <label class="form label">Nombres de la Receta</label>
+                                      <div class="form-group">
+                                          <input type="text" class="form-control mt-2" id="nombre" placeholder="Ingrese el nombre de la receta" name="nombre" #nombre="ngModel"  [(ngModel)]="receta.nombre" required>
+                                      </div>
+                                  </div>
+                                </div>
+                                <div class="row mt-3">
+                                  <div class="col-lg-11 mt-2">
+                                    <div class="col-lg-10">
+                                        <label class="form label">Ingredientes y cantidades de la receta</label>
+                                        <div class="form-group">
+                                            <textarea class="form-control mt-2" rows="5" id="nIngredientes" placeholder="Describa los ingredientes con sus cantidades" #nIngredientes="ngModel" name="nIngredientes" [(ngModel)]="receta.nIngredientes" required></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                              <button type="submit" class="btn btn-dark mt-2">Actualizar Receta</button>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </main>
+
+  </div>
+  <app-sidebar></app-sidebar>
+</div>

@@ -1,0 +1,98 @@
+<div class="container-fluid g-0">
+
+  <div class="display-area">
+
+      <main class="content">
+          <div class="container-fluid">
+              <div class="header">
+                  <h1 class="header-title">
+                      Detalle de Pedido
+                  </h1>
+              </div>
+              <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                      <li class="breadcrumb-item"><a routerLink="/preparacion">Pedidos</a></li>
+                      <li class="breadcrumb-item active"><a href="/preparacion/view">Registro de Pedidos</a></li>
+                  </ol>
+              </nav>
+          </div>
+          <div class="row">
+              <div class="col-12 col-xl-12">
+                  <div class="card">
+                      <div class="card-header bg-dark" style="color: #fff;">
+                          <h5 class="card-title">Rellene el formulario</h5>
+                          <h6 class="card-subtitle text muted">Pedidos.</h6>
+                      </div>
+                      <div class="card-body">
+                          <form class="formulario" id="formulario">
+                              <div class="row">
+                                  <div class="col-2">
+                                      <label class="form label">Fecha</label>
+                                      <div class="form-group">
+                                          <input readonly type="Date" class="form-control mt-2" id="fecha" placeholder="dd/MM/yyyy" #fecha="ngModel" name="fecha" [(ngModel)]="preparacion.fecha" required>
+                                      </div>
+                                  </div>
+                                  <div class="col-2 ">
+                                      <label class="form label">Hora</label>
+                                      <div class="form-group">
+                                          <input readonly type="time" class="form-control mt-2" id="hora" placeholder="(hh:mm)" #hora="ngModel" name="hora" [(ngModel)]="preparacion.hora" required>
+                                      </div>
+                                  </div>
+                                  <div class="col-2 ">
+                                    <label class="form label">Cantidad</label>
+                                    <div class="form-group">
+                                        <input readonly type="number" class="form-control mt-2" id="cantidad" #cantidad="ngModel" name="cantidad" [(ngModel)]="preparacion.cantidad" required>
+                                    </div>
+                                  </div>
+                                  <div class="col-2 ">
+                                    <label class="form label">Costo</label>
+                                    <div class="form-group">
+                                        <input readonly type="number" class="form-control mt-2" id="costo" #costo="ngModel" name="costo" [(ngModel)]="preparacion.costo" required>
+                                    </div>
+                                  </div>
+                                  <div class="col-2 ">
+                                    <label class="form label">Tiempo Estimado</label>
+                                    <div class="form-group">
+                                        <input readonly type="text" class="form-control mt-2" id="tiempoEst" #tiempoEst="ngModel" name="tiempoEst" [(ngModel)]="preparacion.tiempoEst" required>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-4 mt-2">
+                                    <div class="form-group">
+                                      <label class="form-label">
+                                          Cocinero a cargo
+                                          <i class="lni lni-chef-hat"></i>
+                                      </label>
+                                     <input type="text" readonly class="form-control" id="cocineros" #cocineros="ngModel" name="cocineros" [(ngModel)]="cocinero.name" required>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-4 mt-2">
+                                    <div class="form-group">
+                                      <label class="form-label">
+                                          Receta a preparar
+                                          <i class="lni lni-chef-hat"></i>
+                                      </label>
+                                     <input type="text" readonly class="form-control" id="recetas" #recetas="ngModel" name="recetas" [(ngModel)]="receta.nombre" required>
+                                    </div>
+                                  </div>
+                                  <div class="row mt-3">
+                                    <div class="col-lg-11 mt-2">
+                                      <div class="col-lg-10 formulario__grupo" id="grupo__problema">
+                                          <label class="form label">Ingredientes y cantidades de la receta</label>
+                                          <div class="form-group formulario__grupo-input">
+                                              <textarea readonly class="form-control mt-2 formulario__input" rows="5" id="nIngredientes" placeholder="Describa los ingredientes con sus cantidades" #nIngredientes="ngModel" name="nIngredientes" [(ngModel)]="receta.nIngredientes" required></textarea>
+                                          </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </main>
+
+  </div>
+  <app-sidebar></app-sidebar>
+</div>

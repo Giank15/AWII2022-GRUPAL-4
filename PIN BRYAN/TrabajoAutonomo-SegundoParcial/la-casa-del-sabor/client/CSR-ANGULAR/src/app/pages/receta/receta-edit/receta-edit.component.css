@@ -1,0 +1,16 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.active {
+  font-weight: 500;
+}
+
+a:hover {
+  text-shadow: 0.3px 0.3px 0.3px cadetblue;
+}
+
+.content{
+  margin-top: 80px;
+}

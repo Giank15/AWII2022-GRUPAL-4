@@ -1,0 +1,89 @@
+<div class="container-fluid g-0">
+
+  <div class="display-area">
+
+      <main class="content">
+          <div class="container-fluid">
+              <div class="header">
+                  <h1 class="header-title">
+                      Registro de usuarios
+                  </h1>
+              </div>
+              <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="/home">Inicio</a></li>
+                      <li class="breadcrumb-item"><a routerLink="/cocinero">Cocineros</a></li>
+                      <li class="breadcrumb-item active"><a>Actualización de Cocineros</a></li>
+                  </ol>
+              </nav>
+          </div>
+          <div class="row">
+              <div class="col-12 col-xl-12">
+
+                  <div class="card">
+                      <div class="card-header bg-dark" style="color: #fff;">
+                          <h5 class="card-title">Rellene el formulario</h5>
+                          <h6 class="card-subtitle text muted">Usuarios.</h6>
+                      </div>
+                      <div class="card-body">
+                          <form #userForm="ngForm" (ngSubmit)="actualizar(userForm)"   class="formulario" id="formulario">
+                              <div class="row">
+
+                                  <div class="col-lg-4" >
+                                      <label class="form label">Nombres del cocinero</label>
+                                      <div class="form-group input">
+                                          <input type="text" class="form-control mt-2" id="name" placeholder="Nombres del cocinero" name="name" #name="ngModel"  [(ngModel)]="cocinero.name" required>
+
+                                      </div>
+                                  </div>
+
+                                  <div class="col-lg-4">
+                                      <label class="form label">Sueldo del cocinero</label>
+                                      <div class="form-group input">
+                                          <input type="number" class="form-control mt-2" id="sueldo" placeholder="Sueldo del cocinero" name="sueldo" name="sueldo" #sueldo="ngModel"  [(ngModel)]="cocinero.sueldo"  required>
+
+                                      </div>
+                                  </div>
+
+                                  <div class="col-lg-4">
+                                    <label class="form label">Email del cocinero</label>
+                                    <div class="form-group input">
+                                        <input type="email" class="form-control mt-2" id="email" placeholder="Email del cocinero"  name="email" #email="ngModel"  [(ngModel)]="cocinero.email"  required>
+
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="row mt-3">
+
+
+                                  <div class="col-lg-4">
+                                      <label class="form label">Nueva contraseña del cocinero</label>
+                                      <div class="form-group input">
+                                          <input type="password" class="form-control mt-2" id="password" placeholder="Cree una contraseña nueva" name="password" #name="ngModel"  [(ngModel)]="passwordSinEncriptar"  required>
+
+                                      </div>
+                                  </div>
+                                  <div class="col-lg-4">
+                                      <div class="form-group">
+                                          <label class="form label">Rol del cocinero</label>
+                                          <select name="role"  class="form-control form-select mt-2" #role [(ngModel)]="cocinero.role" required>
+                                              <option value="" selected disabled >SELECIONAR</option>
+                                              <option value="ADMIN">Administrador</option>
+                                              <option value="COCINERO">Cocinero</option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <p class="indicacion mt-3">*Recuerda que cualquier tipo de usuario para ingresar al sistema, solamente digita su correo<br> y su contraseña, la cual es asignada por el administrador</p>
+                              </div>
+                              <button type="submit" class="btn btn-dark mt-2">Actualizar</button>
+
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </main>
+
+  </div>
+  <app-sidebar></app-sidebar>
+</div>

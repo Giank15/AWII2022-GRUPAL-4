@@ -1,0 +1,55 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="header">
+            <h1 class="header-title">
+                Recetas Normales
+            </h1>
+            <p class="header-subtitle">Recetas registradas.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-xl-12">
+                <div class="card">
+                    <div class="card-header bg-dark" style="color: #fff;">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h5 class="card-title">Lista de recetas</h5>
+                                <a href="/recetas/nueva" class="btn btn-light btn__mod">Nueva Receta</a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <table class="table table-striped table-hover">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th class="ps-5">Nombre de Receta</th>
+                                <th class="ps-2">Ingredientes de Receta (Cantidades por ingrediente)</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        {{#each recetas}}
+                        <tbody>
+
+                            <td class="ps-5 pt-2">{{this.nombre}}</td>
+                            <td class="ps-2 pt-2">{{this.nIngredientes}}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-secondary dropdown-toggle"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-cog"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="/recetas/editar/{{this._id}}">Editar receta</a></li>
+                                        <li><a class="dropdown-item" href="/recetas/view/{{this._id}}">Ver receta</a></li>
+                                        <li><a class="dropdown-item" href="/recetas/eliminar/{{this._id}}">Eliminar receta</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tbody>
+                        {{/each}}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

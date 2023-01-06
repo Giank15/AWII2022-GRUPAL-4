@@ -1,0 +1,54 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="header">
+            <h1 class="header-title">
+                Registro de Recetas
+            </h1>
+        </div>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="http://localhost:4200/home">Inicio</a></li>
+                <li class="breadcrumb-item"><a routerLink="/recetas">Recetas</a></li>
+                <li class="breadcrumb-item active"><a href="">Nueva Receta</a></li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-12 col-xl-12">
+
+            <div class="card">
+                <div class="card-header bg-dark" style="color: #fff;">
+                    <h5 class="card-title">Rellene el formulario</h5>
+                    <h6 class="card-subtitle text muted">Receta.</h6>
+                </div>
+                <div class="card-body">
+                    <form action="/recetas/nueva" method="post" class="formulario" id="formulario">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <label class="form label">Nombres de la Receta</label>
+                                <div class="form-group">
+                                    <input type="text" class="form-control mt-2" id="nombre"
+                                        placeholder="Ingrese el nombre de la receta" name="nombre" required>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-lg-11 mt-2">
+                                <div class="col-lg-10">
+                                    <label class="form label">Ingredientes y cantidades de la receta</label>
+                                    <div class="form-group">
+                                        <textarea class="form-control mt-2" rows="5" id="nIngredientes"
+                                            placeholder="Describa los ingredientes con sus cantidades"
+                                            name="nIngredientes" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-dark mt-2">Registrar Receta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

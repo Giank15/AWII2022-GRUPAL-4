@@ -1,0 +1,104 @@
+<div class="container-fluid g-0">
+  <div class="display-area">
+
+      <main class="content">
+          <div class="container-fluid">
+              <div class="header">
+                  <h1 class="header-title">
+                      Registro de pedido
+                  </h1>
+              </div>
+              <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a href="/home">Home</a></li>
+                      <li class="breadcrumb-item"><a routerLink="/preparacion">Pedidos</a></li>
+                      <li class="breadcrumb-item active"><a href="/preparacion/registrar">Registro de Pedidos</a></li>
+                  </ol>
+              </nav>
+          </div>
+          <div class="row">
+              <div class="col-12 col-xl-12">
+                  <div class="card">
+                      <div class="card-header bg-dark" style="color: #fff;">
+                          <h5 class="card-title">Rellene el formulario</h5>
+                          <h6 class="card-subtitle text muted">Pedidos.</h6>
+                      </div>
+                      <div class="card-body">
+                          <form #preparacionForm="ngForm" (ngSubmit)="onSubmit(preparacionForm)" class="formulario" id="formulario">
+                              <div class="row">
+                                  <div class="col-2">
+                                      <label class="form label">Fecha</label>
+                                      <div class="form-group">
+                                          <input type="Date" class="form-control mt-2" id="fecha" placeholder="dd/MM/yyyy" #fecha="ngModel" name="fecha" [(ngModel)]="preparacion.fecha" required>
+                                      </div>
+                                  </div>
+                                  <div class="col-2">
+                                      <label class="form label">Hora</label>
+                                      <div class="form-group">
+                                          <input type="time" class="form-control mt-2" id="hora" placeholder="(hh:mm)" #hora="ngModel" name="hora" [(ngModel)]="preparacion.hora" required>
+                                      </div>
+                                  </div>
+                                  <div class="col-2">
+                                    <label class="form label">Cantidad</label>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control mt-2" id="cantidad" #cantidad="ngModel" name="cantidad" [(ngModel)]="preparacion.cantidad" required>
+                                    </div>
+                                  </div>
+                                  <div class="col-2">
+                                    <label class="form label">Costo</label>
+                                    <div class="form-group">
+                                        <input type="number" class="form-control mt-2" id="costo" #costo="ngModel" name="costo" [(ngModel)]="preparacion.costo" required>
+                                    </div>
+                                  </div>
+                                  <div class="col-2">
+                                    <label class="form label">Tiempo Estimado</label>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control mt-2" id="tiempoEst" #tiempoEst="ngModel" name="tiempoEst" [(ngModel)]="preparacion.tiempoEst" required>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-4 mt-3">
+                                      <div class="form-group">
+                                          <label class="form-label">
+                                              Cocinero a cargo
+                                              <i class="lni lni-chef-hat"></i>
+                                          </label>
+                                          <select class="form-control form-select" #idCocinero="ngModel" name="idCocinero" [(ngModel)]="preparacion.idCocinero" required>
+                                                      <option value="" disabled>SELECCIONAR</option>
+                                                      <option value="{{item._id}}" *ngFor="let item of cocineros">{{item.name}}</option>
+                                              </select>
+                                      </div>
+                                  </div>
+                                  <div class="col-lg-4 mt-3">
+                                    <div class="form-group">
+                                        <label class="form-label">
+                                            Receta a preparar
+                                            <i class="fa-solid fa-utensils"></i>
+                                        </label>
+                                        <select class="form-control form-select" #idReceta="ngModel" name="idReceta" [(ngModel)]="preparacion.idReceta" required>
+                                                    <option value="" disabled selected>SELECCIONAR</option>
+                                                    <option value="{{item._id}}" *ngFor="let item of recetas">{{item.nombre}}</option>
+                                                    <option value="{{item._id}}" *ngFor="let item of recetasEsp">{{item.nombre}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                              </div>
+
+                              <div class="row">
+                                  <a routerLink="/receta/registro" class="mt-2">
+                                      ¿No encuentras la receta?. Crea una nueva aquí
+                                      <i class="fa-solid fa-user-plus"></i>
+                                  </a>
+                              </div>
+
+                              <button type="submit" class="btn btn-dark mt-3">Registrar</button>
+
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </main>
+
+  </div>
+  <app-sidebar></app-sidebar>
+</div>
