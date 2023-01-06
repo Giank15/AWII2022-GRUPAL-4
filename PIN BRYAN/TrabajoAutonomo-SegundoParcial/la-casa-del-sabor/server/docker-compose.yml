@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  receta:
+    build: ./microservicio-express-api
+    depends_on:
+      - mongo
+    environment:
+      - DB_MONGO=mongodb://mongo:27017/microservicioSabor
+  monolitico:
+    build: ./monolitco-nestjs-api
+    depends_on:
+      - mongo
+    environment:
+      - DB_MONGO=mongodb://mongo:27017/monoliticoSabor
+  mongo:
+    image: mongo
+    command: mongod --quiet --logpath /dev/null
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - receta
+      - monolitico
