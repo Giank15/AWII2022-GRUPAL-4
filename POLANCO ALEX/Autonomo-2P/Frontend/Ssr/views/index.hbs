@@ -1,0 +1,35 @@
+<div class="container">
+
+
+    <div class="row">
+        <br/>
+<!--Esta ruta se encuentra presente en el archivo index.js dentro del router.get-->
+        <a href="/mesero/nuevo" class="btn btn-primary" >Nuevo</a>
+        <table class="table table-striped">
+            <thead>
+                <th>Nombre</th>
+                <th>Cedula</th>
+                <th>Sueldo Basico</th>
+                <th>Nivel</th>
+            
+            
+            
+                <th colspan="2" >Opciones</th>
+            </thead>
+            {{#each mesero}}
+            <tr>
+                <td>{{this.nombre}}</td>
+                <td>{{this.cedula}}</td>
+                <td>{{this.sueldobasico}}</td>
+                <td>{{this.nivel}}</td>
+                <td><a href="/mesero/modificar/{{this._id}}">Modificar</a></td>
+                <td><a href="/mesero/eliminar/{{this._id}}">Eliminar</a></td>
+
+            </tr>
+            {{/each}}
+        </table>
+
+
+    </div>
+
+</div>
