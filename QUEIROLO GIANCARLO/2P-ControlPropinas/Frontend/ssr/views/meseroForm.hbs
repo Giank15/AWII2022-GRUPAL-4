@@ -1,0 +1,13 @@
+<div class="container">
+    <br>
+
+    <form action="/meseroForm/meseros/operar" method="POST">
+        <input type="hidden" name="_id" value={{meseros._id}}>
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="{{meseros.nombreMesero}}">
+        </div>
+        <button type="submit" class="btn btn-primary" >Aceptar</button>
+        <a href="/" class="btn btn-danger" >Cancelar</a>
+    </form>
+</div>

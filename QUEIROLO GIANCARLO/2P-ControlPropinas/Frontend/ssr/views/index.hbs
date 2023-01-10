@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <br/>
+        <a href="/meseros/nuevo" class="btn btn-primary" >Nuevo</a>
+        <table class="table table-striped">
+            <thead>
+                <th>Nombre Mesero</th>
+                <th colspan="2" >Opciones</th>
+            </thead>
+            {{#each meseros}}
+            <tr>
+                <td>{{this.nombreMesero}}</td>
+                <td><a href="/meseros/modificar/{{this._id}}">Modificar</a></td>
+                <td><a href="/meseros/eliminar/{{this._id}}">Eliminar</a></td>
+
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+</div>
