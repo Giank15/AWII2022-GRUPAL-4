@@ -1,0 +1,329 @@
+*, li,a{
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, sans-serif;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+  }
+  
+  /* CAMBIAR EL ESTILO DEL SCROLL */
+  .body::-webkit-scrollbar {
+    width: 7px;    /*ancho del scroll*/           
+  }
+  .body::-webkit-scrollbar-track {
+    background: rgb(190, 190, 190);      /*fondo del scroll*/        
+  }
+  .body::-webkit-scrollbar-thumb {
+    background-color: #424242;    
+    border-radius: 20px;       
+    
+  }
+  
+  /* DESAPARECER EL BAR DE NAVEGACION */
+  .bar-active{
+    display: none;
+  }
+  
+  
+  /* ESPACIO DEL MAIN Y EL HEADER */
+  .main{
+    padding-top: 95px;
+  }
+  
+  
+  .header{
+    width: 100%;
+    height: 80px;
+    box-shadow: -1px -1px 10px rgba(0, 0, 0, 0.575);
+    display: flex;
+    position: fixed;
+    background-color: #fff;
+  }
+  
+  
+  
+  /* LOGO */
+  .logo{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    padding: 10px 30px;
+  }
+  .imagen-logo{
+    width: 20%;
+    height: 100%;
+    margin-right: 10px;
+  }
+  .imagen-logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .contenedor-letras-logo{
+    width: 100%;
+    height: 100%;
+    font-size: 0.9em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .contenedor-letras-logo h1{
+    font-size: 20px;
+    
+  }
+  .contenedor-letras-logo p{
+    font-size: 13px;
+    
+  }
+  
+  
+  /* NADVAR */
+  .nav-active{
+    display: none;
+  }
+  .nadvar{
+    width: 100%;
+    height: 100%;
+    padding: 10px 30px;
+  
+  }
+  .nadvar ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+  }
+  .nadvar ul li a{
+    color: #424242;
+    padding: 5px 20px;
+    border-bottom: 2px solid #424242;
+  }
+  .nadvar ul li a:hover{
+    color: #266bff;
+    border-bottom: 2px solid #266bff;
+  }
+  
+  
+  
+  /* PARRAFO PRINCIPAL */
+  .parrafo-principal{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    color: #424242;
+    font-size: 18px;
+    font-weight: 100;
+    
+  }
+  
+  
+  
+  /* CONTENIDO MULTIMEDIA */
+  .Contenido-multimedia{
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 0px;
+    margin-bottom: 100px;
+  }
+  .Contenido-multimedia h2{
+    color: #424242;
+    font-size: 2em;
+    font-weight: 100;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  .carrucel-imagenes{
+    width: 70%;
+    height: 300px;
+    background-color: rgb(128, 128, 128);
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+  }
+  .contenedor-magenes-carrucel{
+    min-width: 100%;
+    height: 100%;
+    scroll-snap-align: start;
+  }
+  .contenedor-magenes-carrucel img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  
+  /* PERFIL DEL REFUGIO */
+  .seccion-refugio{
+    width: 100%;
+    height: auto;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .perfil-refugio{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  .grid-refugio{
+    width: 90%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+  }
+  .sub-grid{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 300px;
+    color: rgb(0, 0, 0);
+    background-color: #dadada;
+    border-radius: 10px;
+   
+  }
+  .sub-parrafo{
+    padding: 0 20px;
+  }
+  .sub-grid img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* SECCION FORMULARIO */
+  .seccion-formulario{
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: #424242;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+  .contenedor-formulario{
+    min-width: 35%;
+    height: auto;
+    padding: 20px;
+    box-shadow: 10px 10px 10px rgb(53, 53, 53);
+  }
+  .contenedor-formulario label{
+   font-size: 18px;
+   font-weight: 100;
+    
+  }
+  .contenedor-formulario input{
+    width: 100%;
+    height: auto;
+    border: none;
+    outline: none;
+    padding: 3px 20px;
+    
+  }
+  .contenedor-formulario textarea{
+    width: 100%;
+    height: auto;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    
+  }
+  
+  
+  /* FOOTER */
+  .footer{
+    width: 100%;
+    height: 90px;
+    background-color: rgb(53, 53, 53);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+  }
+  
+  
+  @media screen and (max-width: 1000px){
+    .nadvar{
+        display: none;
+    }
+  
+    .header{
+        display: block;
+    }
+  
+    .logo{
+        width: 100%;
+        
+    }
+  
+    .bar-active{
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 50px;
+        z-index: 1;
+    }
+    
+    
+    .nav-active{
+        display: block;
+        height: 100vh;
+        background-color: #424242;
+        
+  
+    }
+    .nav-active ul{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        gap: 10px;
+        /* background-color: #266bff; */
+        overflow-y: scroll;
+    }
+  
+    .nav-active ul li {
+        width: 100%;
+        height: 100%;
+        /* background: gold; */
+        display: flex;
+        justify-content: center;
+        
+        
+    }
+  
+    .nav-active ul li a{
+        width: 100%;
+        height: 50%;
+        color: #fff;
+        font-size: 30px;
+        border-bottom: 2px solid #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  
+  
+    
+    .grid-refugio{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .contenedor-formulario{
+        min-width: 70%;
+    }
+  }
