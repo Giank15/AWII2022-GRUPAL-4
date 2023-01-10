@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.api = void 0;
+const express_1 = require("express");
+const pedido_controller_1 = require("../controllers/pedido.controller");
+exports.api = (0, express_1.Router)();
+exports.api.post('/crear', pedido_controller_1.createPedido);
+exports.api.get('/datos', pedido_controller_1.getAllPedidos);
+exports.api.get('/ver/:id', pedido_controller_1.getPedido);
+exports.api.put('/pacienteUpdate/:id', pedido_controller_1.updatePedido);
+exports.api.delete('/deletePaciente/:id', pedido_controller_1.deletePedido);

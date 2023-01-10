@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  pedido:
+    build: ./microservice
+    depends_on:
+      - mongo
+    environment:
+      - DB_MONGO=mongodb://mongo:27017/pedido
+  monolitico:
+    build: ./monolitico
+    depends_on:
+      - mongo
+    #environment:
+    # - DB_MONGO=mongodb://localhost/pedido
+  mongo:
+    image: mongo
+    command: mongod --quiet --logpath /dev/null
+    ports:
+      - 27017:27017
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8082:8082"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - pedido
+      - monolitico
